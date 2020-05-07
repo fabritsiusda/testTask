@@ -18,10 +18,10 @@ public class Main {
                     task1.show(100);
                     break;
                 case "2":
-                   secondTask(scanner, answer);
+                   secondTask(scanner);
                     break;
                 case "3":
-                    thirdTask(scanner, answer);
+                    thirdTask(scanner);
                     break;
                 default:
                     System.out.println("incorrect input string");
@@ -29,9 +29,9 @@ public class Main {
         }
     }
 
-    private static void secondTask(Scanner scanner, String answer){
+    private static void secondTask(Scanner scanner){
         System.out.println("Введите r");
-        answer = scanner.nextLine();
+        String answer = scanner.nextLine();
         int r;
         try {
             r = Integer.parseInt(answer);
@@ -56,9 +56,9 @@ public class Main {
         System.out.println(task.calculate());
     }
 
-    private static void thirdTask(Scanner scanner, String answer) throws IOException {
+    private static void thirdTask(Scanner scanner) throws IOException {
         System.out.println("ВВедите путь к файлу");
-        answer = scanner.nextLine();
+        String answer = scanner.nextLine();
         String text = new String(Files.readAllBytes(Paths.get(answer)));
         TextTask task = new TextTask();
         task.setText(text);

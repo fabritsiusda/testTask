@@ -11,7 +11,8 @@ public class TextTask {
         Map<String, TextHelper> map  = new HashMap<>();
         String[] array = text.split("\\s");
         for (String word : array){
-            word = word.replaceAll("\\w", "").replaceAll("[\\.,!\\?\\-:;]", "").toLowerCase().trim();
+            word = word.replaceAll("\\W", "")
+                    .toLowerCase().trim();
 
             if (!word.isEmpty()){
                 if (map.containsKey(word)){

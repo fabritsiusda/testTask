@@ -38,6 +38,7 @@ public class TextHelper implements Comparable {
     public int compareTo(Object o) {
         if ( !(o instanceof TextHelper))
             return -1;
-        return Integer.compare(((TextHelper) o).getCount(), count);
+        int compareByCount = Integer.compare(((TextHelper) o).getCount(), count);
+        return compareByCount != 0 ? compareByCount : word.compareTo(((TextHelper) o).word);
     }
 }
